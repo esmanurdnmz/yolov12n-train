@@ -2,6 +2,7 @@
 
 This project demonstrates **object detection** using the YOLOv12 model.  
 The model is trained on the VOC dataset and tested on a sample video with real-time bounding box drawing, center point marking, and X/Y offset calculations.
+
 ---
 
 ## 🚀 Project Overview
@@ -41,23 +42,32 @@ YOLOv12/
 ```bash
 git clone https://github.com/YOUR_USERNAME/yolov12-object-detection.git
 cd yolov12-object-detection
+
 2. Create and Activate a Virtual Environment
+```bash
 python -m venv venv
 source venv/bin/activate
+
 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+
 4. Install Ultralytics YOLOv12
+```bash
 pip install git+https://github.com/ultralytics/ultralytics.git
 
+
 ---
-📊 Training the Model
+
+
+## 📊 Training the Model
 Run training using the VOC dataset:
 python train.py
 Modify train.py to adjust epochs, batch size, image size, etc.
 
 Training results are saved in the runs/ directory.
 
-🎥 Run Object Detection
+## 🎥 Run Object Detection
 Run detection on a video file:
 python test_video.py
 
@@ -67,7 +77,7 @@ Output video: output.mp4
 
 Output includes bounding boxes, center points, and X/Y offset info.
 
-📌 Notes
+## 📌 Notes
 If your .pt weights are too large, use Git LFS.
 
 For big datasets, it’s better to download them externally instead of uploading to the repo.
