@@ -37,22 +37,29 @@ YOLOv12/
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Installation
 
-1. Clone the Repository:
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/yolov12-object-detection.git
 cd yolov12-object-detection
+```
 
 ### 2. Create and Activate a Virtual Environment
+```
 python -m venv venv
 source venv/bin/activate
+```
 
 ### 3. Install Dependencies
+```
 pip install -r requirements.txt
+```
 
 ### 4. Install Ultralytics YOLOv12
+```
 pip install git+https://github.com/ultralytics/ultralytics.git
+```
 
 
 ---
@@ -60,6 +67,7 @@ pip install git+https://github.com/ultralytics/ultralytics.git
 
 ## 📊 Training the Model
 Run training using the VOC dataset:
+
 python train.py
 Modify train.py to adjust epochs, batch size, image size, etc.
 
