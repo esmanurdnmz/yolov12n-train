@@ -20,7 +20,7 @@ The model is trained on the VOC dataset and tested on a sample video with real-t
 ---
 
 ## 📁 Project Structure
-
+```
 YOLOv12/
 
 ├── train.py # Script to train the model
@@ -34,7 +34,7 @@ YOLOv12/
 ├── output.mp4 # Example output video
 ├── requirements.txt # Python dependencies
 └── README.md # Project documentation
-
+```
 ---
 
 ## ⚙️ Installation
@@ -66,33 +66,63 @@ pip install git+https://github.com/ultralytics/ultralytics.git
 
 
 ## 📊 Training the Model
-Run training using the VOC dataset:
-
+To train the YOLOv12 model on the VOC dataset, run the following command:
+```
 python train.py
-Modify train.py to adjust epochs, batch size, image size, etc.
+```
+- **train.py** script handles the training process.
 
-Training results are saved in the runs/ directory.
+- **Make** sure the VOC dataset is correctly downloaded in the datasets/ folder.
 
+- **You can** customize training parameters such as:
+ 
+  - **Number** of epochs
+
+  - **Batch** size
+
+  - **Image** size
+
+  - **Device** (CPU/GPU)
+
+- **Training** results, logs, and trained weights are saved inside the runs/ directory by default.
 
 ---
 
 
-## 🎥 Run Object Detection
-Run detection on a video file:
+## 🎥 Real-Time Video Inference
+
+To run the trained YOLOv12 model on a sample video and visualize bounding boxes with center offset calculations, use:
+
+```bash
 python test_video.py
+```
 
-Input video: test.mp4
+- **Detected** objects will be displayed with bounding boxes and center points.
 
-Output video: output.mp4
+- **X and Y** offsets (Δx, Δy) relative to the frame center will appear on the video.
 
-Output includes bounding boxes, center points, and X/Y offset info.
+- **The output** video is saved as output.mp4.
+
+-Note: You can adjust the input video by replacing test.mp4 in the script.
 
 ---
 
-## 📌 Notes
-If your .pt weights are too large, use Git LFS.
+## 🧪 Example Outputs
+- **Detected objects:** Cars, motorbikes, persons (depending on dataset)
 
-For big datasets, it’s better to download them externally instead of uploading to the repo.
+- **Sample output** includes center offset text overlay on each frame
 
-The project is still under development — model improvements and new features are planned.
+- **Output video** demonstrates real-time inference capability
+
+## ⚠️ Known Issues
+- **Large .pt model** weights are not uploaded due to GitHub file size limits; download or train locally.
+
+- **Batch size** and workers may need tuning depending on your hardware.
+
+- **On Windows,** multiprocessing issues can be avoided by setting workers=0 in training.
+
+## 📌 Conclusion
+This project shows how YOLOv12 can be used for accurate and real-time object detection in videos.
+Bounding box drawing, center offset calculation, and saving annotated video make it suitable for academic demos and experimental applications.
+Further improvements are planned for model accuracy and deployment.
 
